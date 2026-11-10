@@ -52,8 +52,8 @@ The names explorer, guardian, creator, and leader describe fictional narrative
 themes. They are not measured personality, identity, health, demographic,
 relationship, ability, or future-behavior characteristics. No biological link is
 validated. These numeric fields should not be populated with personal measurements
-or blindly connected to the prior CV agents' normalized box/contour outputs.
+or used to assess real people.
 
 Inference rejects missing, nonnumeric, Boolean, nonfinite, out-of-range, and
 extra features. No imputer fills missing inputs. There are no personal images,
-measurements, or external face/palm datasets in this assignment project.
+measurements, or external face/palm datasets in this project.

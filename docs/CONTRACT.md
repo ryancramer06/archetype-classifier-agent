@@ -45,7 +45,7 @@ current shell directory or absolute. No training occurs during either backend.
 | category | Accepted fictional label, otherwise null |
 | confidence | Maximum model class probability, 0-1; null before a prediction |
 | confidence_type | uncalibrated_model_probability |
-| model_version | cramer-archetype-lr-1.0.0 |
+| model_version | archetype-lr-1.1.0 |
 | acceptance_threshold | Saved threshold 0.60, or null when no model was used |
 | probabilities | Object keyed in fitted classifier class order; null before prediction |
 | explanation | Accepted-class local score explanation; null for other statuses |
