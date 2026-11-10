@@ -9,6 +9,7 @@ import json
 import math
 from numbers import Real
 from pathlib import Path
+import pickle
 import re
 from time import perf_counter
 
@@ -32,6 +33,23 @@ class RequestError(ValueError):
 
 class ModelError(ValueError):
     pass
+
+
+def finite_number(value):
+    """Model parameters must be finite numbers, including when JSON has huge ints."""
+    if isinstance(value, bool) or not isinstance(value, Real):
+        return False
+    try:
+        return math.isfinite(value)
+    except (OverflowError, ValueError):
+        return False
+
+
+def check_parameter_vector(values, length, name):
+    if not isinstance(values, list) or len(values) != length:
+        raise ModelError(f"Invalid {name} shape")
+    if not all(finite_number(value) for value in values):
+        raise ModelError(f"Invalid {name} values")
 
 
 def validate_request(request):
@@ -143,9 +161,9 @@ class ArchetypeAgent:
             self.threshold = (
                 self.metadata["acceptance_threshold"]
                 if threshold_override is None
-                else float(threshold_override)
+                else threshold_override
             )
-            if not math.isfinite(self.threshold) or not 0 <= self.threshold <= 1:
+            if not finite_number(self.threshold) or not 0 <= self.threshold <= 1:
                 raise ModelError("Invalid acceptance threshold")
             self.pipeline = None
             if backend == "sklearn":
@@ -175,12 +193,31 @@ class ArchetypeAgent:
                     )
             elif backend != "portable":
                 raise ModelError("Unsupported backend")
-        except (OSError, ValueError, KeyError, TypeError, ImportError) as error:
+        except (
+            OSError,
+            ValueError,
+            KeyError,
+            TypeError,
+            ImportError,
+            EOFError,
+            pickle.UnpicklingError,
+            AttributeError,
+            IndexError,
+        ) as error:
             raise ModelError(str(error)) from error
 
     def _check_package(self):
         # The JSON export holds the fitted scaler and classifier, not a second trained model.
         model = self.model
+        if not isinstance(model, dict) or not isinstance(self.metadata, dict):
+            raise ModelError("Model and metadata must be JSON objects")
+        if any(
+            package.get("schema_version") != SCHEMA_VERSION
+            for package in (model, self.metadata)
+        ):
+            raise ModelError("Unsupported saved model schema")
+        if model.get("probability_method") != "multinomial_softmax":
+            raise ModelError("Unsupported probability method")
         if (
             model["feature_order"] != FEATURES
             or self.metadata["feature_order"] != FEATURES
@@ -196,20 +233,17 @@ class ArchetypeAgent:
         if model["model_version"] != self.metadata["model_version"]:
             raise ModelError("Model versions do not agree")
         for name in ["mean", "scale"]:
-            if len(model[name]) != 6 or not all(math.isfinite(v) for v in model[name]):
-                raise ModelError(f"Invalid scaler {name}")
+            check_parameter_vector(model[name], len(FEATURES), f"scaler {name}")
         if not all(value > 0 for value in model["scale"]):
             raise ModelError("Scaler scales must be positive")
-        if len(model["coefficients"]) != 4 or any(
-            len(row) != 6 for row in model["coefficients"]
+        if (
+            not isinstance(model["coefficients"], list)
+            or len(model["coefficients"]) != 4
         ):
             raise ModelError("Invalid coefficient shape")
-        if len(model["intercepts"]) != 4:
-            raise ModelError("Invalid intercept shape")
-        if not all(math.isfinite(v) for row in model["coefficients"] for v in row):
-            raise ModelError("Coefficients must be finite")
-        if not all(math.isfinite(v) for v in model["intercepts"]):
-            raise ModelError("Intercepts must be finite")
+        for row in model["coefficients"]:
+            check_parameter_vector(row, len(FEATURES), "coefficients")
+        check_parameter_vector(model["intercepts"], 4, "intercepts")
 
     def predict_vector(self, vector):
         # Reuse the training means/scales. Nothing gets fitted to this request.

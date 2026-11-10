@@ -38,3 +38,18 @@ All 31 existing tests passed again after formatting (Python 3.12.14, Windows).
 The formatter's parallel CLI stalled in this restricted Windows environment;
 its Python API was used sequentially instead. No stalled run is counted as a
 successful check.
+
+## Saved-model validation
+
+Added nine regression/CLI tests. Before the fix, this test run reported eight
+failed assertions (including subtests) and two errors: oversized integers and
+an empty pipeline could escape the normal unavailable response. Boolean model
+parameters, Boolean thresholds, incompatible schemas, and unsupported
+probability methods were also accepted incorrectly.
+
+The loader now checks numeric types, dimensions, finite values, schema versions,
+and the supported softmax export format. Truncated/unreadable native model
+packages are converted to the existing `unavailable` contract. This does not
+make loading arbitrary pickle files safe; joblib artifacts must still be trusted.
+Added CLI checks for stdin input, missing model files, and output-write failure.
+All 40 tests passed after the fix on Windows/Python 3.12.14.
