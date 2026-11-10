@@ -1,0 +1,78 @@
+{
+  "creator": {
+    "coefficients": {
+      "palm_width": -1.9181927023027574,
+      "palm_length": -0.05800516481267265,
+      "finger_ratio": -0.9442878232136949,
+      "face_width": 1.682375268619759,
+      "face_height": 0.39643034650105036,
+      "eye_distance": 0.7549364930082652
+    },
+    "intercept": -1.0498120008268756,
+    "strongest_positive": [
+      "face_width",
+      1.682375268619759
+    ],
+    "strongest_negative": [
+      "palm_width",
+      -1.9181927023027574
+    ]
+  },
+  "explorer": {
+    "coefficients": {
+      "palm_width": 3.02594782844261,
+      "palm_length": -0.07130562268353312,
+      "finger_ratio": 2.266131203419895,
+      "face_width": -0.8374843854621901,
+      "face_height": 0.5127091740204909,
+      "eye_distance": 2.445365640081525
+    },
+    "intercept": -0.22378667677447658,
+    "strongest_positive": [
+      "palm_width",
+      3.02594782844261
+    ],
+    "strongest_negative": [
+      "face_width",
+      -0.8374843854621901
+    ]
+  },
+  "guardian": {
+    "coefficients": {
+      "palm_width": -1.4122422500175036,
+      "palm_length": 0.13365490686645054,
+      "finger_ratio": -0.5517529074779962,
+      "face_width": 0.8003093524014575,
+      "face_height": 0.5149570072535768,
+      "eye_distance": -2.3140350657022815
+    },
+    "intercept": 0.04034264653300865,
+    "strongest_positive": [
+      "face_width",
+      0.8003093524014575
+    ],
+    "strongest_negative": [
+      "eye_distance",
+      -2.3140350657022815
+    ]
+  },
+  "leader": {
+    "coefficients": {
+      "palm_width": 0.30448712387766336,
+      "palm_length": -0.004344119370247321,
+      "finger_ratio": -0.7700904727282051,
+      "face_width": -1.6452002355590245,
+      "face_height": -1.4240965277751385,
+      "eye_distance": -0.8862670673874958
+    },
+    "intercept": 1.2332560310683103,
+    "strongest_positive": [
+      "palm_width",
+      0.30448712387766336
+    ],
+    "strongest_negative": [
+      "face_width",
+      -1.6452002355590245
+    ]
+  }
+}

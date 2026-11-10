@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "demo-guardian",
+  "features": {
+    "palm_width": 7.5799,
+    "palm_length": 17.3627,
+    "finger_ratio": 0.8943,
+    "face_width": 15.9151,
+    "face_height": 17.0299,
+    "eye_distance": 4.9197
+  }
+}

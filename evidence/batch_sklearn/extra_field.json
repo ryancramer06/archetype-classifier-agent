@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "demo-validation",
+  "status": "invalid_input",
+  "category": null,
+  "confidence": null,
+  "confidence_type": "uncalibrated_model_probability",
+  "model_version": "cramer-archetype-lr-1.0.0",
+  "acceptance_threshold": 0.6,
+  "probabilities": null,
+  "explanation": null,
+  "reason": null,
+  "error": {
+    "code": "unexpected_field",
+    "message": "Unexpected top-level field: extra."
+  },
+  "warnings": [
+    "Fictional category; not a personal assessment.",
+    "Synthetic data do not validate relationships between measurements and personal traits.",
+    "Probabilities are uncalibrated; contributions explain linear scores, not causal effects."
+  ],
+  "processing_ms": 0.008
+}

@@ -1,0 +1,22 @@
+{
+  "valid_creator.json": {
+    "partition": "training",
+    "row_index": 129
+  },
+  "valid_explorer.json": {
+    "partition": "training",
+    "row_index": 823
+  },
+  "valid_guardian.json": {
+    "partition": "training",
+    "row_index": 942
+  },
+  "valid_leader.json": {
+    "partition": "training",
+    "row_index": 758
+  },
+  "uncertain.json": {
+    "partition": "training",
+    "row_index": 11
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "recorded_utc": "2026-11-04T05:36:02.015673+00:00",
+  "python": "3.13.5",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "machine": "AMD64",
+  "board_model": null,
+  "raspberry_pi_hardware_detected": false,
+  "requested_deployment": {
+    "folder": "/home/sju/Desktop/cramer-archetype-agent",
+    "python": "3.13.5",
+    "os": "64-bit Raspberry Pi OS"
+  },
+  "model_version": "cramer-archetype-lr-1.0.0",
+  "backend": "portable",
+  "consistency_rows": 1000,
+  "max_probability_error": 4.440892098500626e-16,
+  "consistency_passed": true,
+  "total_probability_check_ms": 3.712,
+  "mean_ms_per_vector": 0.003712,
+  "batch_passed": 22,
+  "batch_cases": 22,
+  "sklearn_check": {
+    "max_probability_error": 5.551115123125783e-16,
+    "consistency_passed": true,
+    "batch_passed": 22,
+    "batch_cases": 22
+  }
+}

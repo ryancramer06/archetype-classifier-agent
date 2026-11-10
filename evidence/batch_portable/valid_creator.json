@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "demo-creator",
+  "status": "ok",
+  "category": "creator",
+  "confidence": 0.96432209268,
+  "confidence_type": "uncalibrated_model_probability",
+  "model_version": "cramer-archetype-lr-1.0.0",
+  "acceptance_threshold": 0.6,
+  "probabilities": {
+    "creator": 0.96432209268,
+    "explorer": 0.000209505699,
+    "guardian": 0.014414026933,
+    "leader": 0.021054374689
+  },
+  "explanation": {
+    "method": "standardized_linear_contributions",
+    "target_class": "creator",
+    "intercept": -1.049812,
+    "sum_all_contributions": 5.16530456,
+    "linear_score": 4.11549256,
+    "top_features": [
+      {
+        "feature": "face_width",
+        "standardized_value": 2.00117665,
+        "contribution": 3.36673011,
+        "direction": "supports"
+      },
+      {
+        "feature": "finger_ratio",
+        "standardized_value": -2.00674037,
+        "contribution": 1.89494049,
+        "direction": "supports"
+      },
+      {
+        "feature": "eye_distance",
+        "standardized_value": 0.86853398,
+        "contribution": 0.655688,
+        "direction": "supports"
+      }
+    ]
+  },
+  "reason": null,
+  "error": null,
+  "warnings": [
+    "Fictional category; not a personal assessment.",
+    "Synthetic data do not validate relationships between measurements and personal traits.",
+    "Probabilities are uncalibrated; contributions explain linear scores, not causal effects."
+  ],
+  "processing_ms": 0.039
+}

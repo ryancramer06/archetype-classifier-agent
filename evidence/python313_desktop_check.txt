@@ -1,0 +1,80 @@
+$ python scripts/pi_check.py --with-sklearn --output evidence/python313_desktop_check.json
+PASS above_range.json             invalid_input  category=None confidence=None
+PASS bad_request_id.json          invalid_input  category=None confidence=None
+PASS below_range.json             invalid_input  category=None confidence=None
+PASS boolean_feature.json         invalid_input  category=None confidence=None
+PASS duplicate_key.json           invalid_input  category=None confidence=None
+PASS extra_feature.json           invalid_input  category=None confidence=None
+PASS extra_field.json             invalid_input  category=None confidence=None
+PASS features_not_object.json     invalid_input  category=None confidence=None
+PASS infinity.json                invalid_input  category=None confidence=None
+PASS malformed.json               invalid_input  category=None confidence=None
+PASS missing_feature.json         invalid_input  category=None confidence=None
+PASS missing_request_id.json      invalid_input  category=None confidence=None
+PASS nan.json                     invalid_input  category=None confidence=None
+PASS null_feature.json            invalid_input  category=None confidence=None
+PASS numeric_string.json          invalid_input  category=None confidence=None
+PASS request_not_object.json      invalid_input  category=None confidence=None
+PASS uncertain.json               uncertain      category=None confidence=0.482991806202
+PASS valid_creator.json           ok             category=creator confidence=0.96432209268
+PASS valid_explorer.json          ok             category=explorer confidence=0.998491719609
+PASS valid_guardian.json          ok             category=guardian confidence=0.977354272568
+PASS valid_leader.json            ok             category=leader confidence=0.907656549653
+PASS wrong_schema.json            invalid_input  category=None confidence=None
+
+Batch complete: 22/22 checks passed. Responses saved to C:\Users\ryry5\Documents\Codex\2026-10-05\re\outputs\cramer-archetype-agent\local_results\pi_requests
+PASS above_range.json             invalid_input  category=None confidence=None
+PASS bad_request_id.json          invalid_input  category=None confidence=None
+PASS below_range.json             invalid_input  category=None confidence=None
+PASS boolean_feature.json         invalid_input  category=None confidence=None
+PASS duplicate_key.json           invalid_input  category=None confidence=None
+PASS extra_feature.json           invalid_input  category=None confidence=None
+PASS extra_field.json             invalid_input  category=None confidence=None
+PASS features_not_object.json     invalid_input  category=None confidence=None
+PASS infinity.json                invalid_input  category=None confidence=None
+PASS malformed.json               invalid_input  category=None confidence=None
+PASS missing_feature.json         invalid_input  category=None confidence=None
+PASS missing_request_id.json      invalid_input  category=None confidence=None
+PASS nan.json                     invalid_input  category=None confidence=None
+PASS null_feature.json            invalid_input  category=None confidence=None
+PASS numeric_string.json          invalid_input  category=None confidence=None
+PASS request_not_object.json      invalid_input  category=None confidence=None
+PASS uncertain.json               uncertain      category=None confidence=0.482991806202
+PASS valid_creator.json           ok             category=creator confidence=0.96432209268
+PASS valid_explorer.json          ok             category=explorer confidence=0.998491719609
+PASS valid_guardian.json          ok             category=guardian confidence=0.977354272568
+PASS valid_leader.json            ok             category=leader confidence=0.907656549653
+PASS wrong_schema.json            invalid_input  category=None confidence=None
+
+Batch complete: 22/22 checks passed. Responses saved to C:\Users\ryry5\Documents\Codex\2026-10-05\re\outputs\cramer-archetype-agent\local_results\pi_requests_sklearn
+{
+  "recorded_utc": "2026-11-04T05:36:02.015673+00:00",
+  "python": "3.13.5",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "machine": "AMD64",
+  "board_model": null,
+  "raspberry_pi_hardware_detected": false,
+  "requested_deployment": {
+    "folder": "/home/sju/Desktop/cramer-archetype-agent",
+    "python": "3.13.5",
+    "os": "64-bit Raspberry Pi OS"
+  },
+  "model_version": "cramer-archetype-lr-1.0.0",
+  "backend": "portable",
+  "consistency_rows": 1000,
+  "max_probability_error": 4.440892098500626e-16,
+  "consistency_passed": true,
+  "total_probability_check_ms": 3.712,
+  "mean_ms_per_vector": 0.003712,
+  "batch_passed": 22,
+  "batch_cases": 22,
+  "sklearn_check": {
+    "max_probability_error": 5.551115123125783e-16,
+    "consistency_passed": true,
+    "batch_passed": 22,
+    "batch_cases": 22
+  }
+}
+This is a compatibility check on this computer, not physical Raspberry Pi evidence.
+
+exit_code: 0

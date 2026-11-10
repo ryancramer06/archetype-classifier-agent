@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "request_id": "demo-uncertain",
+  "features": {
+    "palm_width": 7.3051,
+    "palm_length": 16.7385,
+    "finger_ratio": 0.8911,
+    "face_width": 15.8633,
+    "face_height": 17.7213,
+    "eye_distance": 5.9549
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "valid_creator.json": {
+    "status": "ok",
+    "error_code": null
+  },
+  "valid_explorer.json": {
+    "status": "ok",
+    "error_code": null
+  },
+  "valid_guardian.json": {
+    "status": "ok",
+    "error_code": null
+  },
+  "valid_leader.json": {
+    "status": "ok",
+    "error_code": null
+  },
+  "uncertain.json": {
+    "status": "uncertain",
+    "error_code": null
+  },
+  "missing_feature.json": {
+    "status": "invalid_input",
+    "error_code": "missing_feature"
+  },
+  "boolean_feature.json": {
+    "status": "invalid_input",
+    "error_code": "nonnumeric_feature"
+  },
+  "numeric_string.json": {
+    "status": "invalid_input",
+    "error_code": "nonnumeric_feature"
+  },
+  "null_feature.json": {
+    "status": "invalid_input",
+    "error_code": "nonnumeric_feature"
+  },
+  "below_range.json": {
+    "status": "invalid_input",
+    "error_code": "out_of_range"
+  },
+  "above_range.json": {
+    "status": "invalid_input",
+    "error_code": "out_of_range"
+  },
+  "extra_feature.json": {
+    "status": "invalid_input",
+    "error_code": "unexpected_feature"
+  },
+  "extra_field.json": {
+    "status": "invalid_input",
+    "error_code": "unexpected_field"
+  },
+  "wrong_schema.json": {
+    "status": "invalid_input",
+    "error_code": "unsupported_schema_version"
+  },
+  "bad_request_id.json": {
+    "status": "invalid_input",
+    "error_code": "invalid_request_id"
+  },
+  "missing_request_id.json": {
+    "status": "invalid_input",
+    "error_code": "missing_field"
+  },
+  "features_not_object.json": {
+    "status": "invalid_input",
+    "error_code": "invalid_features"
+  },
+  "request_not_object.json": {
+    "status": "invalid_input",
+    "error_code": "invalid_request"
+  },
+  "malformed.json": {
+    "status": "invalid_input",
+    "error_code": "malformed_json"
+  },
+  "nan.json": {
+    "status": "invalid_input",
+    "error_code": "malformed_json"
+  },
+  "infinity.json": {
+    "status": "invalid_input",
+    "error_code": "malformed_json"
+  },
+  "duplicate_key.json": {
+    "status": "invalid_input",
+    "error_code": "malformed_json"
+  }
+}

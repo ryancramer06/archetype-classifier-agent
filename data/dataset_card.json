@@ -1,0 +1,105 @@
+{
+  "dataset_name": "CSCI 317H Synthetic Archetype Dataset",
+  "dataset_version": "1.0.0",
+  "records": 1000,
+  "seed": 317,
+  "source": "Dr.V-generated synthetic data",
+  "permitted_use": "Coursework and educational demonstration only.",
+  "personal_data": false,
+  "target_column": "archetype",
+  "feature_order": [
+    "palm_width",
+    "palm_length",
+    "finger_ratio",
+    "face_width",
+    "face_height",
+    "eye_distance"
+  ],
+  "feature_schema": {
+    "palm_width": {
+      "unit": "synthetic_cm",
+      "min": 6.0,
+      "max": 11.0
+    },
+    "palm_length": {
+      "unit": "synthetic_cm",
+      "min": 14.0,
+      "max": 23.0
+    },
+    "finger_ratio": {
+      "unit": "dimensionless",
+      "min": 0.75,
+      "max": 1.15,
+      "definition": "Fictional index-length / ring-length ratio; component lengths are not modeled."
+    },
+    "face_width": {
+      "unit": "synthetic_cm",
+      "min": 11.0,
+      "max": 18.0
+    },
+    "face_height": {
+      "unit": "synthetic_cm",
+      "min": 15.0,
+      "max": 25.0
+    },
+    "eye_distance": {
+      "unit": "synthetic_cm",
+      "min": 4.5,
+      "max": 7.5
+    }
+  },
+  "class_labels": [
+    "explorer",
+    "guardian",
+    "creator",
+    "leader"
+  ],
+  "requested_class_proportions": {
+    "explorer": 0.5,
+    "guardian": 0.25,
+    "creator": 0.15,
+    "leader": 0.1
+  },
+  "actual_class_counts": {
+    "explorer": 492,
+    "guardian": 248,
+    "creator": 150,
+    "leader": 110
+  },
+  "actual_class_proportions": {
+    "explorer": 0.492,
+    "guardian": 0.248,
+    "creator": 0.15,
+    "leader": 0.11
+  },
+  "generation": {
+    "function": "sklearn.datasets.make_classification",
+    "n_informative": 4,
+    "n_redundant": 1,
+    "n_repeated": 0,
+    "n_clusters_per_class": 1,
+    "flip_y": 0.04,
+    "class_sep": 1.1,
+    "shuffle": true,
+    "range_mapping": "u = 0.5 * (1 + tanh(x / 3)); value = min + u * (max - min)",
+    "label_rule": "Labels are generated jointly with abstract class-conditional feature clusters. Class indices are mapped to fictional archetype names."
+  },
+  "missing_value_policy": {
+    "training_data": "No missing values generated.",
+    "inference": "Reject missing, nonnumeric, nonfinite, or out-of-range required features."
+  },
+  "limitations": [
+    "All records and labels are fictional.",
+    "Ranges are arbitrary teaching ranges.",
+    "No biological relationships are validated.",
+    "No personality traits are measured.",
+    "Class proportions may differ from requested values because labels are randomly reassigned.",
+    "Synthetic performance does not establish real-world validity."
+  ],
+  "environment": {
+    "python": "3.10.9",
+    "numpy": "1.26.4",
+    "pandas": "2.2.0",
+    "scikit_learn": "1.4.1.post1"
+  }
+}

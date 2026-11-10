@@ -1,0 +1,2 @@
+# Optional scikit-learn inference on the Pi; portable inference needs no packages.
+-r requirements-core.txt

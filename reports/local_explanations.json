@@ -1,0 +1,136 @@
+[
+  {
+    "row_index": 935,
+    "true_label": "leader",
+    "request": {
+      "schema_version": "1.0.0",
+      "request_id": "explain-test-935",
+      "features": {
+        "palm_width": 8.7545,
+        "palm_length": 18.2427,
+        "finger_ratio": 1.0978,
+        "face_width": 14.4117,
+        "face_height": 17.2366,
+        "eye_distance": 5.5135
+      }
+    },
+    "response": {
+      "schema_version": "1.0.0",
+      "request_id": "explain-test-935",
+      "status": "ok",
+      "category": "leader",
+      "confidence": 0.777474290722,
+      "confidence_type": "uncalibrated_model_probability",
+      "model_version": "cramer-archetype-lr-1.0.0",
+      "acceptance_threshold": 0.6,
+      "probabilities": {
+        "creator": 0.000312888449,
+        "explorer": 0.153484296706,
+        "guardian": 0.068728524122,
+        "leader": 0.777474290722
+      },
+      "explanation": {
+        "method": "standardized_linear_contributions",
+        "target_class": "leader",
+        "intercept": 1.23325603,
+        "sum_all_contributions": 1.73331839,
+        "linear_score": 2.96657443,
+        "top_features": [
+          {
+            "feature": "finger_ratio",
+            "standardized_value": 1.56973412,
+            "contribution": -1.20883729,
+            "direction": "opposes"
+          },
+          {
+            "feature": "face_width",
+            "standardized_value": -0.68451982,
+            "contribution": 1.12617216,
+            "direction": "supports"
+          },
+          {
+            "feature": "eye_distance",
+            "standardized_value": -1.02285482,
+            "contribution": 0.90652254,
+            "direction": "supports"
+          }
+        ]
+      },
+      "reason": null,
+      "error": null,
+      "warnings": [
+        "Fictional category; not a personal assessment.",
+        "Synthetic data do not validate relationships between measurements and personal traits.",
+        "Probabilities are uncalibrated; contributions explain linear scores, not causal effects."
+      ],
+      "processing_ms": 0.515
+    }
+  },
+  {
+    "row_index": 879,
+    "true_label": "guardian",
+    "request": {
+      "schema_version": "1.0.0",
+      "request_id": "explain-test-879",
+      "features": {
+        "palm_width": 7.8171,
+        "palm_length": 16.6045,
+        "finger_ratio": 0.8597,
+        "face_width": 15.5405,
+        "face_height": 18.6048,
+        "eye_distance": 5.3285
+      }
+    },
+    "response": {
+      "schema_version": "1.0.0",
+      "request_id": "explain-test-879",
+      "status": "ok",
+      "category": "guardian",
+      "confidence": 0.930584480082,
+      "confidence_type": "uncalibrated_model_probability",
+      "model_version": "cramer-archetype-lr-1.0.0",
+      "acceptance_threshold": 0.6,
+      "probabilities": {
+        "creator": 0.026198893711,
+        "explorer": 7.41527e-07,
+        "guardian": 0.930584480082,
+        "leader": 0.04321588468
+      },
+      "explanation": {
+        "method": "standardized_linear_contributions",
+        "target_class": "guardian",
+        "intercept": 0.04034265,
+        "sum_all_contributions": 5.13023527,
+        "linear_score": 5.17057791,
+        "top_features": [
+          {
+            "feature": "eye_distance",
+            "standardized_value": -1.32488929,
+            "contribution": 3.06584026,
+            "direction": "supports"
+          },
+          {
+            "feature": "palm_width",
+            "standardized_value": -0.80148859,
+            "contribution": 1.13189605,
+            "direction": "supports"
+          },
+          {
+            "feature": "finger_ratio",
+            "standardized_value": -1.18077808,
+            "contribution": 0.65149774,
+            "direction": "supports"
+          }
+        ]
+      },
+      "reason": null,
+      "error": null,
+      "warnings": [
+        "Fictional category; not a personal assessment.",
+        "Synthetic data do not validate relationships between measurements and personal traits.",
+        "Probabilities are uncalibrated; contributions explain linear scores, not causal effects."
+      ],
+      "processing_ms": 0.117
+    }
+  }
+]
