@@ -1,0 +1,9 @@
+{
+  "source_archive": "cramer-archetype-agent.zip",
+  "sha256": "13df6a61b1bba830041d8f8c8a687893f54d57492fcddb3b317785799bebdad7",
+  "archive_files": 135,
+  "tracked_import_files": 130,
+  "excluded_from_git": "Five vendor wheels, preserved in the original archive.",
+  "prior_git_history": false,
+  "note": "The initial import is an existing completed project, not a reconstruction of earlier development."
+}

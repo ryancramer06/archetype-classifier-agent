@@ -1,9 +1,0 @@
-$ python -S scripts/verify_wheels.py
-Verified joblib-1.5.2-py3-none-any.whl
-Verified numpy-2.2.6-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
-Verified scikit_learn-1.7.2-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl
-Verified scipy-1.15.3-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
-Verified threadpoolctl-3.6.0-py3-none-any.whl
-5 wheels verified for CPython 3.13, Linux ARM64/aarch64 (Raspberry Pi OS 64-bit).
-
-exit_code: 0

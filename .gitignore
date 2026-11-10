@@ -1,6 +1,29 @@
+# Python environments and generated runtime files
 .venv/
+.venv-*/
+venv/
 __pycache__/
-*.pyc
-local_results/
+*.py[cod]
 .test_tmp_*/
 .mplconfig/
+local_results/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Large, optional dependencies belong in a local wheel cache, not Git.
+pi_wheels/*.whl
+*.zip
+
+# Local configuration and editor/OS files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

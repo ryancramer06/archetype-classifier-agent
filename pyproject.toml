@@ -1,0 +1,4 @@
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+extend-exclude = "(local_results|pi_wheels|\\.venv|\\.test_tmp_)"

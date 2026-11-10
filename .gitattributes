@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.png binary
+*.joblib binary
+*.whl binary
+# These two supplied files are checksum-verified byte for byte.
+data/archetype_synthetic.csv -text
+data/dataset_card.json -text
