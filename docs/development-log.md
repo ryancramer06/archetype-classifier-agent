@@ -78,3 +78,11 @@ Added `train.py --preview-split` to show row counts, per-class counts, and overl
 without fitting or writing model files. Previewing and training share one split
 function, preserving the existing seed and row allocation. Two integration tests
 compare its output with the saved split and check that model files remain intact.
+
+## Continuous integration
+
+Added GitHub Actions checks for standard-library inference, full saved-model
+tests on Windows and Ubuntu/Python 3.11 and 3.13, and consistent formatting.
+The Ubuntu/Python 3.13 job also retrains and checks the newly written artifacts.
+Workflow results are reported separately from the local tests once GitHub runs
+them; adding a workflow alone is not a passing CI result.
