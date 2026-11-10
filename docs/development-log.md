@@ -53,3 +53,13 @@ packages are converted to the existing `unavailable` contract. This does not
 make loading arbitrary pickle files safe; joblib artifacts must still be trusted.
 Added CLI checks for stdin input, missing model files, and output-write failure.
 All 40 tests passed after the fix on Windows/Python 3.12.14.
+
+## Readable example runner
+
+The example runner now shows the status, category, model probability, threshold,
+signed contributions, and useful errors before technical metadata. `--format
+json` retains the complete responses. Interactive pauses remain optional through
+`--auto`. EOF, cancellation, and missing model packages have clear exit behavior.
+Five new tests passed, covering summary/JSON output, five interactive pauses,
+end-of-input, and missing artifacts. The original five inputs and model decisions
+are unchanged.
