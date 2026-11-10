@@ -43,7 +43,7 @@ jobs:
           python-version: ${{ matrix.python }}
           cache: pip
           cache-dependency-path: requirements*.txt
-      - run: python -m pip install --only-binary=:all: -r requirements.txt
+      - run: 'python -m pip install --only-binary=:all: -r requirements.txt'
       - run: python -m unittest discover -s tests -v
       - run: python evaluate.py
       - run: python batch.py
@@ -57,12 +57,13 @@ jobs:
   formatting:
     name: Python formatting
     runs-on: ubuntu-latest
-    env:
-      BLACK_CACHE_DIR: ${{ runner.temp }}/black-cache
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
           python-version: '3.13'
       - run: python -m pip install black==26.10.1
-      - run: python -m black --check --workers 1 .
+      - name: Check formatting
+        env:
+          BLACK_CACHE_DIR: ${{ runner.temp }}/black-cache
+        run: python -m black --check --workers 1 .
