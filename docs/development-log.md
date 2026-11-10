@@ -63,3 +63,11 @@ json` retains the complete responses. Interactive pauses remain optional through
 Five new tests passed, covering summary/JSON output, five interactive pauses,
 end-of-input, and missing artifacts. The original five inputs and model decisions
 are unchanged.
+
+## Installation from a clone
+
+Vendor wheels are intentionally outside Git. The Pi setup helper now installs
+the pinned packages from the package index when a clone has no wheel cache;
+an existing offline cache is still checked before use. The checksum checker
+also reports missing files clearly and rejects paths outside its cache folder.
+Four new tests cover valid, corrupt, missing, and unsafe cache entries.
