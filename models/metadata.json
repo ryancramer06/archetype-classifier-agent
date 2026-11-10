@@ -1,5 +1,5 @@
 {
-  "model_version": "cramer-archetype-lr-1.0.0",
+  "model_version": "archetype-lr-1.1.0",
   "schema_version": "1.0.0",
   "feature_order": [
     "palm_width",
@@ -1110,7 +1110,7 @@
     "python": "3.12.14",
     "platform": "Windows-11-10.0.26300-SP0"
   },
-  "created_utc": "2026-11-04T05:18:32.689954+00:00",
+  "created_utc": "2026-11-10T20:14:14.927147+00:00",
   "event_order": [
     "validate supplied data",
     "reserve stratified test set",

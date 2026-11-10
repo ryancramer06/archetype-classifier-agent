@@ -235,7 +235,7 @@ class PortableTests(unittest.TestCase):
             mean = statistics.fmean(vectors[i][j] for i in train)
             self.assertAlmostEqual(mean, self.agent.model["mean"][j], places=11)
 
-    def test_presentation_requests_come_from_training_rows(self):
+    def test_sample_requests_come_from_training_rows(self):
         training = set(self.agent.metadata["split"]["train_indices"])
         origins = json.loads((ROOT / "samples/provenance.json").read_text())
         self.assertEqual(len(origins), 5)

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "model_version": "cramer-archetype-lr-1.0.0",
+  "model_version": "archetype-lr-1.1.0",
   "feature_order": [
     "palm_width",
     "palm_length",

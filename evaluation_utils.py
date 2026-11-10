@@ -175,7 +175,7 @@ def write_report(
     classes = metrics["class_order"]
     best = selection["selected"]
     lines = [
-        "# Cramer ML Archetype Agent - evaluation report",
+        "# Archetype Classifier Agent - evaluation report",
         "",
         "All records and labels are fictional. Results describe this synthetic task only.",
         "",
@@ -299,7 +299,7 @@ def write_report(
         "",
         f"Threshold={metrics['acceptance_threshold']:.2f}, fixed in config.py before training/test evaluation.",
         "Accept when max predicted probability >= threshold. Otherwise category is null and",
-        "status is uncertain. This fixed classroom rule was not optimized against test results.",
+        "status is uncertain. This predeclared acceptance rule was not optimized against test results.",
         f"Accepted {metrics['accepted_count']}/{metrics['sample_count']} test rows; coverage={metrics['coverage']:.6f}.",
         f"Accepted-case accuracy: {metrics['accepted_accuracy'] if metrics['accepted_accuracy'] is not None else 'undefined (no accepted rows)'}.",
         "Probabilities are uncalibrated model probabilities. Abstention does not reliably detect out-of-distribution inputs.",
@@ -366,8 +366,8 @@ def write_report(
     ]
     (folder / "evaluation.md").write_text("\n".join(lines), encoding="utf-8")
     (folder / "index.html").write_text(
-        "<!doctype html><html><head><meta charset='utf-8'><title>Cramer archetype results</title><style>body{max-width:1000px;margin:30px auto;font:17px system-ui;color:#18262e;padding:0 20px}img{max-width:100%;height:auto}p{line-height:1.5}section{border-top:1px solid #ccc;margin-top:25px}code{background:#eee;padding:3px}</style></head><body>"
-        + "<h1>Cramer ML Archetype Agent</h1><p>Fictional synthetic categories; no personal assessment.</p>"
+        "<!doctype html><html><head><meta charset='utf-8'><title>Archetype classifier results</title><style>body{max-width:1000px;margin:30px auto;font:17px system-ui;color:#18262e;padding:0 20px}img{max-width:100%;height:auto}p{line-height:1.5}section{border-top:1px solid #ccc;margin-top:25px}code{background:#eee;padding:3px}</style></head><body>"
+        + "<h1>Archetype Classifier Agent</h1><p>Fictional synthetic categories; no personal assessment.</p>"
         + f"<p>Held-out accuracy: <b>{metrics['accuracy']:.3f}</b>; macro F1: <b>{metrics['macro_f1']:.3f}</b>; macro OvR AUC: <b>{metrics['macro_ovr_auc']:.3f}</b>.</p>"
         + f"<p>Majority baseline accuracy: {baseline['accuracy']:.3f}; macro F1: {baseline['macro_f1']:.3f}. Acceptance coverage: {metrics['coverage']:.3f} at threshold {metrics['acceptance_threshold']:.2f}.</p>"
         + "<p>Read <a href='evaluation.md'>the full evaluation report</a> for all tables, assumptions, and limitations.</p>"

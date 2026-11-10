@@ -1,4 +1,4 @@
-# Cramer ML Archetype Agent - evaluation report
+# Archetype Classifier Agent - evaluation report
 
 All records and labels are fictional. Results describe this synthetic task only.
 
@@ -116,7 +116,7 @@ accuracy, calibration, or evidence of actual personality traits.
 
 Threshold=0.60, fixed in config.py before training/test evaluation.
 Accept when max predicted probability >= threshold. Otherwise category is null and
-status is uncertain. This fixed classroom rule was not optimized against test results.
+status is uncertain. This predeclared acceptance rule was not optimized against test results.
 Accepted 192/200 test rows; coverage=0.960000.
 Accepted-case accuracy: 0.9479166666666666.
 Probabilities are uncalibrated model probabilities. Abstention does not reliably detect out-of-distribution inputs.
@@ -146,7 +146,7 @@ Full coefficient table: global_coefficients.json. Two actual local examples foll
   "category": "leader",
   "confidence": 0.777474290722,
   "confidence_type": "uncalibrated_model_probability",
-  "model_version": "cramer-archetype-lr-1.0.0",
+  "model_version": "archetype-lr-1.1.0",
   "acceptance_threshold": 0.6,
   "probabilities": {
     "creator": 0.000312888449,
@@ -188,7 +188,7 @@ Full coefficient table: global_coefficients.json. Two actual local examples foll
     "Synthetic data do not validate relationships between measurements and personal traits.",
     "Probabilities are uncalibrated; contributions explain linear scores, not causal effects."
   ],
-  "processing_ms": 0.515
+  "processing_ms": 0.123
 }
 ```
 
@@ -202,7 +202,7 @@ Full coefficient table: global_coefficients.json. Two actual local examples foll
   "category": "guardian",
   "confidence": 0.930584480082,
   "confidence_type": "uncalibrated_model_probability",
-  "model_version": "cramer-archetype-lr-1.0.0",
+  "model_version": "archetype-lr-1.1.0",
   "acceptance_threshold": 0.6,
   "probabilities": {
     "creator": 0.026198893711,
@@ -244,7 +244,7 @@ Full coefficient table: global_coefficients.json. Two actual local examples foll
     "Synthetic data do not validate relationships between measurements and personal traits.",
     "Probabilities are uncalibrated; contributions explain linear scores, not causal effects."
   ],
-  "processing_ms": 0.117
+  "processing_ms": 0.048
 }
 ```
 

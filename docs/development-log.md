@@ -86,3 +86,25 @@ tests on Windows and Ubuntu/Python 3.11 and 3.13, and consistent formatting.
 The Ubuntu/Python 3.13 job also retrains and checks the newly written artifacts.
 Workflow results are reported separately from the local tests once GitHub runs
 them; adding a workflow alone is not a passing CI result.
+
+## Software documentation and model naming
+
+Replaced machine-specific instructions with clone-based Windows/Linux commands
+and documented the request contract, result interpretation, architecture,
+installation, tests, Pi setup, and remaining limitations. Removed grading and
+class-presentation material while retaining dataset attribution and usage terms.
+The software/model identifier is now `archetype-lr-1.1.0`; the model family,
+features, split, grid, labels, and fixed threshold are unchanged. Regenerating
+artifacts verifies that these preparation changes preserve the measured task.
+
+Retraining completed with all eight candidates and five folds. The held-out
+results remained accuracy=0.94, macro F1=0.9125411715, and macro OvR
+AUC=0.9710434165. All 51 tests then passed, and evaluate.py reproduced the
+saved held-out metrics without fitting. The native pipeline bytes and portable
+numeric parameters remain equivalent to the imported fitted model.
+
+The first CI submission was rejected because an unquoted install command
+contained a YAML-significant colon. The command is now quoted; the cache-path
+expression also lives at step scope. PyYAML 6.0.3 successfully parsed the
+corrected workflow before it was pushed. This was a real preparation bug,
+not an invented earlier development event.

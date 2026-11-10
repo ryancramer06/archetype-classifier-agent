@@ -69,7 +69,7 @@ def main():
         "board_model": board,
         "raspberry_pi_hardware_detected": bool(board and "Raspberry Pi" in board),
         "requested_deployment": {
-            "folder": "/home/sju/Desktop/cramer-archetype-agent",
+            "folder": str(ROOT),
             "python": "3.13.5",
             "os": "64-bit Raspberry Pi OS",
         },

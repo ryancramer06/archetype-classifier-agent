@@ -1,7 +1,7 @@
 """Build reproducible JSON demonstrations from training rows and invalid copies.
 
 This does not regenerate or relabel the instructor's CSV. The acceptance rule
-and fitted model are already fixed before these presentation examples are chosen.
+and fitted model are already fixed before these example requests are chosen.
 """
 
 from copy import deepcopy

@@ -21,7 +21,7 @@
       "category": "leader",
       "confidence": 0.777474290722,
       "confidence_type": "uncalibrated_model_probability",
-      "model_version": "cramer-archetype-lr-1.0.0",
+      "model_version": "archetype-lr-1.1.0",
       "acceptance_threshold": 0.6,
       "probabilities": {
         "creator": 0.000312888449,
@@ -63,7 +63,7 @@
         "Synthetic data do not validate relationships between measurements and personal traits.",
         "Probabilities are uncalibrated; contributions explain linear scores, not causal effects."
       ],
-      "processing_ms": 0.515
+      "processing_ms": 0.123
     }
   },
   {
@@ -88,7 +88,7 @@
       "category": "guardian",
       "confidence": 0.930584480082,
       "confidence_type": "uncalibrated_model_probability",
-      "model_version": "cramer-archetype-lr-1.0.0",
+      "model_version": "archetype-lr-1.1.0",
       "acceptance_threshold": 0.6,
       "probabilities": {
         "creator": 0.026198893711,
@@ -130,7 +130,7 @@
         "Synthetic data do not validate relationships between measurements and personal traits.",
         "Probabilities are uncalibrated; contributions explain linear scores, not causal effects."
       ],
-      "processing_ms": 0.117
+      "processing_ms": 0.048
     }
   }
 ]

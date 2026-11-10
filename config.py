@@ -21,7 +21,7 @@ RANGES = {
 }
 EXPECTED_COUNTS = {"explorer": 492, "guardian": 248, "creator": 150, "leader": 110}
 SCHEMA_VERSION = "1.0.0"
-MODEL_VERSION = "cramer-archetype-lr-1.0.0"
+MODEL_VERSION = "archetype-lr-1.1.0"
 SEED = 317
 # Declared before any test evaluation. This is a simple abstention rule, not calibration.
 ACCEPTANCE_THRESHOLD = 0.60
