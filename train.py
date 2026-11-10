@@ -49,6 +49,32 @@ def save_json(path, value):
     )
 
 
+def split_indices(labels):
+    """Use the same deterministic split for previewing and fitting."""
+    return train_test_split(
+        np.arange(len(labels)), test_size=0.20, stratify=labels, random_state=SEED
+    )
+
+
+def preview_split():
+    _, labels, _ = load_dataset()
+    training, test = split_indices(labels)
+    print(
+        json.dumps(
+            {
+                "seed": SEED,
+                "training_rows": len(training),
+                "test_rows": len(test),
+                "overlap": len(set(training) & set(test)),
+                "training_counts": dict(Counter(labels[i] for i in training)),
+                "test_counts": dict(Counter(labels[i] for i in test)),
+                "model_fitted": False,
+            },
+            indent=2,
+        )
+    )
+
+
 def train():
     os.environ.setdefault("MPLCONFIGDIR", str(ROOT / ".mplconfig"))
     model_dir, reports, evidence = ROOT / "models", ROOT / "reports", ROOT / "evidence"
@@ -56,12 +82,8 @@ def train():
         folder.mkdir(exist_ok=True)
     vectors, targets, dataset = load_dataset()
     X, y = np.asarray(vectors, dtype=float), np.asarray(targets)
-    indices = np.arange(len(y))
-
     # Reserve the test rows before any scaler is fitted or hyperparameter is chosen.
-    train_ids, test_ids = train_test_split(
-        indices, test_size=0.20, stratify=y, random_state=SEED
-    )
+    train_ids, test_ids = split_indices(y)
     X_train, X_test, y_train, y_test = (
         X[train_ids],
         X[test_ids],
@@ -395,5 +417,13 @@ def train():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.parse_args()
-    train()
+    parser.add_argument(
+        "--preview-split",
+        action="store_true",
+        help="Show split counts without fitting or writing artifacts",
+    )
+    args = parser.parse_args()
+    if args.preview_split:
+        preview_split()
+    else:
+        train()

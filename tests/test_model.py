@@ -3,6 +3,8 @@
 import json
 from pathlib import Path
 import tempfile
+import subprocess
+import sys
 import unittest
 
 try:
@@ -45,6 +47,33 @@ class SavedModelTests(unittest.TestCase):
         self.assertEqual(
             self.pipeline.named_steps["classifier"].classes_.tolist(),
             self.meta["class_order"],
+        )
+
+    def test_split_preview_matches_saved_training_ids(self):
+        from train import split_indices
+
+        training, test = split_indices(self.y)
+        self.assertEqual(training.tolist(), self.meta["split"]["train_indices"])
+        self.assertEqual(test.tolist(), self.meta["split"]["test_indices"])
+
+    def test_split_preview_cli_does_not_change_model_files(self):
+        before = {p.name: p.stat().st_mtime_ns for p in (ROOT / "models").iterdir()}
+        result = subprocess.run(
+            [sys.executable, str(ROOT / "train.py"), "--preview-split"],
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        summary = json.loads(result.stdout)
+        self.assertEqual(
+            (summary["training_rows"], summary["test_rows"], summary["overlap"]),
+            (800, 200, 0),
+        )
+        self.assertEqual(summary["training_counts"], self.meta["split"]["train_counts"])
+        self.assertEqual(summary["test_counts"], self.meta["split"]["test_counts"])
+        self.assertFalse(summary["model_fitted"])
+        self.assertEqual(
+            before, {p.name: p.stat().st_mtime_ns for p in (ROOT / "models").iterdir()}
         )
 
     def test_joblib_save_reload_prediction_consistency(self):

@@ -71,3 +71,10 @@ the pinned packages from the package index when a clone has no wheel cache;
 an existing offline cache is still checked before use. The checksum checker
 also reports missing files clearly and rejects paths outside its cache folder.
 Four new tests cover valid, corrupt, missing, and unsafe cache entries.
+
+## Inspecting the split without training
+
+Added `train.py --preview-split` to show row counts, per-class counts, and overlap
+without fitting or writing model files. Previewing and training share one split
+function, preserving the existing seed and row allocation. Two integration tests
+compare its output with the saved split and check that model files remain intact.
