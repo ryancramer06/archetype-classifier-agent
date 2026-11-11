@@ -1,0 +1,66 @@
+{
+  "recorded_utc": "2026-11-10T14:21:55.631279-06:00",
+  "tested_commit": "6031c7cca7ebde55adc49ae5f278852f1cff1a87",
+  "source": "Fresh GitHub clone and newly installed pinned dependencies",
+  "python": "3.13.5",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "tests": {
+    "run": 51,
+    "passed": 51,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "checks": {
+    "dependency_check": {
+      "exit_code": 0,
+      "command": "python -m pip check"
+    },
+    "evaluation": {
+      "exit_code": 0,
+      "command": "python evaluate.py"
+    },
+    "portable_batch": {
+      "exit_code": 0,
+      "command": "python batch.py --backend portable",
+      "cases": 22,
+      "passed": 22
+    },
+    "sklearn_batch": {
+      "exit_code": 0,
+      "command": "python batch.py",
+      "cases": 22,
+      "passed": 22
+    },
+    "portable_demo": {
+      "exit_code": 0,
+      "command": "python demo.py --backend portable --auto"
+    },
+    "sklearn_demo": {
+      "exit_code": 0,
+      "command": "python demo.py --auto"
+    },
+    "split_preview": {
+      "exit_code": 0,
+      "command": "python train.py --preview-split"
+    }
+  },
+  "dataset_hashes": {
+    "archetype_synthetic.csv": "eba5c260ea44c4aa2fc80fb2b06cfee51f9a8628bf4f5c7aa24a3d195ed65abd",
+    "dataset_card.json": "7182795b9128d8f677bf4a93b4ba57e494183115e21f175b9d2afc8425f30fe4"
+  },
+  "original_numeric_parameters_unchanged": true,
+  "original_pipeline_bytes_unchanged": true,
+  "working_tree_clean_after_checks": true,
+  "source_archive_sha256": "13df6a61b1bba830041d8f8c8a687893f54d57492fcddb3b317785799bebdad7",
+  "physical_raspberry_pi_tested": false,
+  "github_actions": {
+    "jobs_passed": 5,
+    "tested_commit": "6031c7cca7ebde55adc49ae5f278852f1cff1a87",
+    "url": "https://github.com/ryancramer06/archetype-classifier-agent/actions/runs/42893835531"
+  },
+  "windows_python_311_stdlib": {
+    "skipped": 11,
+    "passed": 40
+  }
+}

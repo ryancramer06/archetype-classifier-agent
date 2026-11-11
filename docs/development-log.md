@@ -108,3 +108,14 @@ contained a YAML-significant colon. The command is now quoted; the cache-path
 expression also lives at step scope. PyYAML 6.0.3 successfully parsed the
 corrected workflow before it was pushed. This was a real preparation bug,
 not an invented earlier development event.
+
+## Published clone verification
+
+A fresh clone at `6031c7c` installed the pinned requirements on Windows with
+Python 3.13.5. All 51 tests passed, both batches passed 22/22 cases, and the
+held-out evaluation reproduced the saved metrics. Both example modes and the
+split preview ran successfully. Python 3.11 standard-library checks passed 40
+tests with 11 native checks skipped. The dataset and fitted parameters matched
+the original archive. All five jobs in GitHub Actions run 42893835531 passed,
+including the Ubuntu training run and the Windows test job. Details are in
+`evidence/portfolio-verification.json`.
